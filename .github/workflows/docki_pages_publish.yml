@@ -14,12 +14,11 @@ env:
 jobs:
     build:
         runs-on: ubuntu-latest
-        container: ghcr.io/quirinecker/docki:latest
         steps:
             - uses: actions/checkout@v4
 
             - name: Build Documentation
-              run: docki build
+              run: docker run ghcr.io/quirinecker/docki docki build
 
             - name: Upload Artifact
               uses: actions/upload-pages-artifact@v3
