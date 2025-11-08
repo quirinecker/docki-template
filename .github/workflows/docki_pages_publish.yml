@@ -18,7 +18,7 @@ jobs:
             - uses: actions/checkout@v4
 
             - name: Build Documentation
-              run: docker run ghcr.io/quirinecker/docki docki build
+              run: docker run -v ".:/app" ghcr.io/quirinecker/docki docki build
 
             - name: Upload Artifact
               uses: actions/upload-pages-artifact@v3
